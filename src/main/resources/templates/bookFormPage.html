@@ -1,3 +1,5 @@
+<!-- FIXME Use imports from header and footer -->
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -6,6 +8,7 @@
 <form class="form-horizontal">
 <fieldset>
 
+<!-- This is not how the legend tag, should be used. Try with another tag -->
 <!-- Form Name -->
 <legend align="center">Add a new book</legend>
 
@@ -13,7 +16,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="book_number">Book Number</label>  
   <div class="col-md-4">
-  <input id="book_number" name="book_number" placeholder="Book Number" class="form-control input-md" required="" type="text">
+  <input id="book_number" name="book_number" placeholder="Book Number" class="form-control input-md" required="" type="text"><!-- FIXME Why is required empty? -->
     
   </div>
 </div>
@@ -47,7 +50,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="product_name">Price</label>  
+  <label class="col-md-4 control-label" for="product_name">Price</label>  <!-- FIXEM "for" values are wrong, please take a look at all of them -->
   <div class="col-md-4">
   <input id="price" name="price" placeholder="Price" class="form-control input-md" required="" type="text">
     
@@ -74,9 +77,9 @@
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <label class="col-md-4 control-label" for="singlebutton"></label><!-- FIXME wrong naming of the button -->
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add Book</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add Book</button><!-- FIXME wrong naming of the button -->
   </div>
   </div>
 
