@@ -1,87 +1,48 @@
-<!-- FIXME Use imports from header and footer -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment/pageheader :: head">
+<body>
+	<h1>Add a new book</h1>
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+	<form action="" th:action="@{/submitBook}" th:object=${book} method="post">
 
-<form class="form-horizontal">
-<fieldset>
+		<div class="form-group row col-lg-4">
+			<label class="col-lg-4 col-form-label">Book ID: </label> 
+			<input class="form-control" th:field="*{id}">
+		</div>
+		
+		<div class="form-group row col-lg-4">
+			<label class="col-lg-4 col-form-label">Title: </label> 
+			<input class="form-control" th:field="*{title}">
+		</div>
+		
+		<div class="form-group row col-lg-4">
+			<label class="col-lg-4 col-form-label">Author: </label> 
+			<input class="form-control" th:field="*{author}">
+		</div>
+		
+		<div class="form-group row col-lg-4">
+			<label class="col-lg-4 col-form-label">Year Published: </label> 
+			<input class="form-control" th:field="*{yearPublished}">
+		</div>
+		
+		<div class="form-group row col-lg-4">
+			<label class="col-lg-4 col-form-label">Price: </label> 
+			<input class="form-control" th:field="*{price}">
+		</div>
 
-<!-- This is not how the legend tag, should be used. Try with another tag -->
-<!-- Form Name -->
-<legend align="center">Add a new book</legend>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="book_number">Book Number</label>  
-  <div class="col-md-4">
-  <input id="book_number" name="book_number" placeholder="Book Number" class="form-control input-md" required="" type="text"><!-- FIXME Why is required empty? -->
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_name">Title</label>  
-  <div class="col-md-4">
-  <input id="title" name="title" placeholder="Title" class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="author">Author</label>  
-  <div class="col-md-4">
-  <input id="author" name="author" placeholder="Author" class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_name">Year published</label>  
-  <div class="col-md-4">
-  <input id="year_published" name="year_published" placeholder="Year published" class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_name">Price</label>  <!-- FIXEM "for" values are wrong, please take a look at all of them -->
-  <div class="col-md-4">
-  <input id="price" name="price" placeholder="Price" class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
+		<div class="form-group row col-lg-4">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
 
 
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_description">Book description</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="book_description" name="book_description"></textarea>
-  </div>
-</div>
 
- <!-- File Button --> 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">Cover Image</label>
-  <div class="col-md-4">
-    <input id="filebutton" name="filebutton" class="input-file" type="file">
-  </div>
-</div>
+	</form>
 
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton"></label><!-- FIXME wrong naming of the button -->
-  <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add Book</button><!-- FIXME wrong naming of the button -->
-  </div>
-  </div>
 
-</fieldset>
-</form>
+
+
+</body>
+<div th:replace="fragment/pagefooter :: pagefooter"></div>
+</html>
+////////////////////////////////////////////////////////////////////////////////////////////

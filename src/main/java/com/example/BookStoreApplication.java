@@ -1,5 +1,5 @@
-package com.example.BookStore;
-// FIXME package name should be com.example. Remove BookStore from package name.
+package com.example;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,3 +11,5 @@ public class BookStoreApplication {
 	}
 
 }
+
+
