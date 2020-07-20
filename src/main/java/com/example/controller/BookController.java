@@ -32,16 +32,10 @@ public class BookController {
 		model.addAttribute("bookList", text);
 		
 		
-		List <Book> books = new ArrayList<Book>();
-		books.add(new Book(1, "White Fang", "Jack London", 1906, "$10.97"));
-		books.add(new Book(2, "Harry Potter", "JK Rowling", 1997, "$9.50"));
-		books.add(new Book(3, "War and Peace", "Leo Tolstoy", 1867, "$20.83"));
-		books.add(new Book(4, "The Shining", "Stephen King", 1977, "$23.32"));
-		model.addAttribute("bookList", books);
-		//Read all books from DB
-		
+		List<Book> books = bookService.getBooks();
+
+		model.addAttribute("bookList", books);		
 		bookService.getBooks();
-		
 		
 		mav.setViewName("bookOverviewPage");
 		return mav;
