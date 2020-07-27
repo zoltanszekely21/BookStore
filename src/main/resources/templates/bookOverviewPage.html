@@ -11,8 +11,9 @@
 		<div class="card-body">
 			<div class="row justify-content-md-center">
 				<div class="form-group col-lg-8">
-					<form action="#" th:action="@{/bookFormPage}" method="post">
-						<button type="submit" value="addBook" class="btn btn-primary pull-right btn-space">Add a new book</button>
+					<form action="#" th:action="@{/bookForm}" method="post">
+						<button type="submit" value="addBook"
+							class="btn btn-primary pull-right btn-space">Add a new book</button>
 					</form>
 				</div>
 			</div>
@@ -31,24 +32,30 @@
 							</tr>
 						</thead>
 						<tbody>
-		                        <tr th:each="book : ${bookList}">
-			                    <td th:text="${book.id}"/>
-			                    <td th:text="${book.title}"/>
-		                    	<td th:text="${book.author}"/>
-		                     	<td th:text="${book.yearPublished}"/>
-		                    	<td th:text="${book.price}"/>
+							<tr th:each="book : ${bookList}">
+								<td th:text="${book.id}" />
+								<td th:text="${book.title}" />
+								<td th:text="${book.author}" />
+								<td th:text="${book.yearPublished}" />
+								<td th:text="${book.price}" />
 								<td>
-									<form action="#" th:action="@{/editBook}" th:object=${book} method="post" style="display: inline-block;">
+									<form action="#" th:action="@{/editBook}" th:object=${book}
+										method="post" style="display: inline-block;">
 										<div class="d-none">
 											<input name="bookId" th:value="*{id}">
 										</div>
-										<button class="btn btn-primary btn-sm" th:id="'btn_edit_' + ${book.id}" type="submit" title="Edit book">Edit</button>
+										<button class="btn btn-primary btn-sm"
+											th:id="'btn_edit_' + ${book.id}" type="submit"
+											title="Edit book">Edit</button>
 									</form>
-									<form action="#" th:action="@{/deleteBook}" th:object=${book} method="post" style="display: inline-block;">
+									<form action="#" th:action="@{/deleteBook}" th:object=${book}
+										method="post" style="display: inline-block;">
 										<div class="d-none">
 											<input name="bookId" th:value="*{id}">
 										</div>
-										<button class="btn btn-danger btn-sm" th:id="'btn_delete_' + ${book.id}" type="submit" title="Delete book">Delete</button>
+										<button class="btn btn-danger btn-sm"
+											th:id="'btn_delete_' + ${book.id}" type="submit"
+											title="Delete book">Delete</button>
 									</form>
 
 								</td>

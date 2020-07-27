@@ -1,18 +1,48 @@
 package com.example.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "t_book")
 public class Book {
-	
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private int id;
+	
+	@Column(name = "BOOKNUMBER")
+	private String bookNumber;
+	
+	@Column(name = "TITLE")
 	private String title;
+	
+	@Column(name = "AUTHOR")
 	private String author;
-	private String price;
+	
+	@Column(name = "YEARPUBLISHED")
 	private int yearPublished;
 	
+	@Column(name = "PRICE")
+	private String price;
+	
 
-	public Book() {
+    @ManyToOne/*(fetch = FetchType.LAZY, optional = false)*/
+    @JoinColumn(name = "id_bestsellers", nullable = false)
+    private Bestsellers bestsellers;
+
+
+    public Book() {
 		
 	}
-	
+
 	public Book(int id, String title, String author, int yearPublished, String price) {
 		super();
 		this.id = id;
@@ -21,8 +51,8 @@ public class Book {
 		this.yearPublished = yearPublished;
 		this.price = price;
 	}
-	
-	public int getId() {
+
+public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -51,20 +81,9 @@ public class Book {
 	}
 	
 	public String getPrice() {
-		return price;
+		return getPrice();
 	}
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	
-	
-
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", yearPublished=" + yearPublished + ", price=" + price + "]";
-	}
-	
-	
-	
 }
-
